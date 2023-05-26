@@ -94,5 +94,10 @@ app.get('/api/users/logout', auth, (req, res) => {
       })
   })
 
+app.get('/api/test', (req, res)=>{
+    res.send("안녕하세요")
+})
+
+
 app.get('/', (req, res) => res.send('hello world'))
 app.listen(port, ()=> console.log(`${port}`))

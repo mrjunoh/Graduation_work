@@ -2,6 +2,7 @@
 from flask import Flask, request, jsonify, abort, render_template
 import socket
 import json
+from flask_cors import CORS
 
 #챗봇 엔진 서버 정보 - 1
 host="127.0.0.1" #챗봇 엔진 서버 ip 주소
@@ -9,6 +10,7 @@ port = 5050 #챗봇 엔진 서버 통신 포트
 
 #flask 애플리케이션
 app = Flask(__name__)
+CORS(app, origins=['http://localhost:3000'])
 
 #챗봇 엔진 서버와 통신 - 2
 def get_answer_form_engine(bottype, query):
@@ -66,12 +68,6 @@ def index():
     except Exception as ex:
         #오류 발생시 500 error
         abort(500)
-
-
-@app.route('/data')
-def get_data():
-    data = {'name': 'John', 'age': 30}
-    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)
