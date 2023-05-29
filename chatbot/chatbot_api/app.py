@@ -69,6 +69,12 @@ def index():
         #오류 발생시 500 error
         abort(500)
 
+#이미지
+@app.route('/images/<image_file>', methods=['GET'])
+def image(image_file):
+    return render_template('img.html', image_file='/resize_images/'+image_file+'_resize.jpg')
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)
 

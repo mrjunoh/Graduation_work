@@ -12,6 +12,7 @@ import Chat from './Pages/Chat';
 import Chat2 from './Pages/Chat2.js';
 import Chat3 from './Pages/chat3';
 import Chat4 from './Pages/Chat4'
+import Chat5 from './Pages/Chat5'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/chat2" element={<Chat2/>}/>
           <Route exact path="/chat3" element={<Chat3/>}/>
           <Route exact path="/chat4" element={<Chat4/>}/>
+          <Route exact path="/chat5" element={<Chat5/>}/>
         </Routes>
       </div>
     </BrowserRouter>

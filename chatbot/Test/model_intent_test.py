@@ -9,7 +9,34 @@ p = Preprocess(word2index_idc='./chatbot_dict.bin', userdic='./Utils/user_dic.ts
 
 intent = IntentModel(model_name='./intent_model.h5', preprocess= p )
 
-query = "컴공 과사 번호 알려줘"
+# query = "학생회조직도 알려줘"
+# predict = intent.predict_class(query)
+# predict_label = intent.labels[predict]
+# print("="*30)
+# print(query)
+# print("의도 예측 클래스 : ", predict)
+# print("의도 예측 레이블 : ", predict_label)
+
+
+# query = "강의과제등록 알려줘."
+# predict = intent.predict_class(query)
+# predict_label = intent.labels[predict]
+# print("="*30)
+# print(query)
+# print("의도 예측 클래스 : ", predict)
+# print("의도 예측 레이블 : ", predict_label)
+
+
+# query = "공지사항 알려줘"
+# predict = intent.predict_class(query)
+# predict_label = intent.labels[predict]
+# print("="*30)
+# print(query)
+# print("의도 예측 클래스 : ", predict)
+# print("의도 예측 레이블 : ", predict_label)
+
+
+query = "교육이념 알려줘"
 predict = intent.predict_class(query)
 predict_label = intent.labels[predict]
 print("="*30)
@@ -18,55 +45,28 @@ print("의도 예측 클래스 : ", predict)
 print("의도 예측 레이블 : ", predict_label)
 
 
-query = "전화번호 알려줘."
-predict = intent.predict_class(query)
-predict_label = intent.labels[predict]
-print("="*30)
-print(query)
-print("의도 예측 클래스 : ", predict)
-print("의도 예측 레이블 : ", predict_label)
+# query = "교수진 소개"
+# predict = intent.predict_class(query)
+# predict_label = intent.labels[predict]
+# print("="*30)
+# print(query)
+# print("의도 예측 클래스 : ", predict)
+# print("의도 예측 레이블 : ", predict_label)
 
 
-query = "학교 도서관 번호는??"
-predict = intent.predict_class(query)
-predict_label = intent.labels[predict]
-print("="*30)
-print(query)
-print("의도 예측 클래스 : ", predict)
-print("의도 예측 레이블 : ", predict_label)
+# query = "교육이수 체계도 알려줘"
+# predict = intent.predict_class(query)
+# predict_label = intent.labels[predict]
+# print("="*30)
+# print(query)
+# print("의도 예측 클래스 : ", predict)
+# print("의도 예측 레이블 : ", predict_label)
 
-
-query = "본관 건물 위치 어디야?"
-predict = intent.predict_class(query)
-predict_label = intent.labels[predict]
-print("="*30)
-print(query)
-print("의도 예측 클래스 : ", predict)
-print("의도 예측 레이블 : ", predict_label)
-
-
-query = "학교 운동장은 어디야?"
-predict = intent.predict_class(query)
-predict_label = intent.labels[predict]
-print("="*30)
-print(query)
-print("의도 예측 클래스 : ", predict)
-print("의도 예측 레이블 : ", predict_label)
-
-
-query = "기간 언제까지야?"
-predict = intent.predict_class(query)
-predict_label = intent.labels[predict]
-print("="*30)
-print(query)
-print("의도 예측 클래스 : ", predict)
-print("의도 예측 레이블 : ", predict_label)
-
-query = "컴퓨터공학부란?"
-predict = intent.predict_class(query)
-predict_label = intent.labels[predict]
-print("="*30)
-print(query)
-print("의도 예측 클래스 : ", predict)
-print("의도 예측 레이블 : ", predict_label)
-print("="*30)
+# query = "컴공 사이트 주소 알려줘"
+# predict = intent.predict_class(query)
+# predict_label = intent.labels[predict]
+# print("="*30)
+# print(query)
+# print("의도 예측 클래스 : ", predict)
+# print("의도 예측 레이블 : ", predict_label)
+# print("="*30)

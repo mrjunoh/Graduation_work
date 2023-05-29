@@ -9,7 +9,7 @@ from tensorflow.keras import preprocessing
 class IntentModel:
     def __init__(self, model_name, preprocess):
         #의도 클래스별 레이블
-        self.labels = {0:'번호', 1:'장소', 2:'시간'}
+        self.labels = {0:'번호', 1:'장소', 2:'시간', 3:'기타'}
 
         #의도 분류 모델 불러오기
         self.model = load_model(model_name)
