@@ -1,7 +1,8 @@
 *{ margin: 0; padding: 0; }
  
 .chat_wrap .header { font-size: 14px; padding: 15px 0; background: #F18C7E; color: white; text-align: center;  }
- 
+.chat_wrap .header .button { float:right; padding: 1px; background: #F18C7E; color: white; border: 0px;} 
+
 .chat_wrap .chat { padding-bottom: 80px; }
 .chat_wrap .chat ul { width: 100%; list-style: none;  }
 .chat_wrap .chat ul li { width: 100%;  }
@@ -14,6 +15,6 @@
 .chat_wrap .chat ul li > div.message { display: inline-block; word-break:break-all; font-size: 16px; font-weight: 400; margin: 5px 20px; max-width: 75%; border: 1px solid #888; padding: 10px; border-radius: 5px; background-color: #FCFCFC; color: #555; text-align: left; }
  
 .chat_wrap .input-div { position: fixed; bottom: 0; width: 100%; background-color: #FFF; text-align: center; border-top: 1px solid #F18C7E; }
-.chat_wrap .input-div > textarea { width: 100%; height: 80px; border: none; padding: 10px; }
+.chat_wrap .input-div > textarea { width: 100%; height: 40px; border: none; padding: 10px; }
  
 .format { display: none; }

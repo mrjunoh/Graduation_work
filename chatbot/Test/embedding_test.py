@@ -8,7 +8,7 @@ embedding_data = torch.load('./embedding_data.pt')
 df = pd.read_excel('./train_data_embedding.xlsx')
 
 # 질문 예시 문장
-sentence = "컴공 과사 번호 알려줘"
+sentence = "컴공 학사 번호 알려줘"
 print("질문 문장 : ",sentence)
 sentence = sentence.replace(" ","")
 print("공백 제거 문장 : ", sentence)

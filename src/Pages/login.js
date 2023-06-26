@@ -57,7 +57,7 @@ function Login(props) {
             .then(response => {
                 console.log(response.action.payload.loginSuccess)
                 if (response.action.payload.loginSuccess) {
-                    navigate('/chat4');
+                    navigate('/Chat5');
                 }
                 else {
                     alert('error')
@@ -76,14 +76,11 @@ function Login(props) {
                 </Typography>
                 <TextField margin="normal" label="Email Address" required fullWidth name="email" autoFocus onChange={(event) => { setEmail(event.target.value); }} />
                 <TextField margin="normal" label="Password" type="password" required fullWidth name="password" onChange={(event) => { setPassword(event.target.value); }} />
-                <FormControlLabel control={<Checkbox value="remember" clolor="primary" />} label="계정 저장" />
+                
                 <Button type="submit" fullWidth variant='contained' sx={{ mt: 3, mb: 2 }} onClick={onSubmitHandler}>로그인</Button>
                 <Grid container>
                     <Grid item xs>
-                        <Link>비밀번호 찾기</Link>
-                    </Grid>
-                    <Grid item xs>
-                        <Link>계정 만들기</Link>
+                        <Link href="/register">계정 만들기</Link>
                     </Grid>
                 </Grid>
             </Box>

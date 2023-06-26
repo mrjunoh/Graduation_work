@@ -71,8 +71,10 @@ print('임베딩 pt 파일 갱신 및 로드 완료')
 def to_client(conn, addr):
     try:
         #데이터 수신 - 1.1
-        read= conn.recv(2048) #수신 데이터가 있을 때까지 블로킹
+        read= conn.recv(2048) #수신(받은) 데이터가 있을 때까지 블로킹
         print('==================')
+        print('conn은 뭘까?: ', conn)
+        print('read는 뭘까?', read)
         print('Connection from %s' % str(addr))
 
         if read is None or not read:
@@ -84,6 +86,7 @@ def to_client(conn, addr):
         recv_json_data = json.loads(read.decode())
         print('데이터 수신: ', recv_json_data)
         query = recv_json_data['Query']
+        print(query)
 
         #의도 파악 - 1.3
         intent_pred = intent.predict_class(query)
@@ -187,6 +190,6 @@ if __name__ == '__main__':
 #when='midnight' 매일 자정을 기준으로 새로운 파일을 생성
 #suffix 기준으로 파일 생성
 
-#구현한 로그 기능은 유사도 점수가 0.6보다 작으면 
+#구현한 로그 기능은 유사도 점수가 0.4보다 작으면 
 #사용자 질문, 예측 의도, 선택된 질문, 선택된 질문 의도, 유사도 점수의 내용을 기록하도록 구현함
 #그래서 FindAnswer.py내용도 변경해야함

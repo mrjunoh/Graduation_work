@@ -27,7 +27,7 @@ def get_answer_form_engine(bottype, query):
     mySocket.send(message.encode())
 
     #챗봇 엔진 답변 출력
-    data = mySocket.recv(2048).decode()
+    data = mySocket.recv(2048).decode() #답변 받음
     ret_data = json.loads(data)
 
     #챗봇 엔진 서버 연결 소켓 닫기
@@ -52,27 +52,17 @@ def query(bot_type):
         #오류 발생시 500 error
         abort(500)
 
-#시작 문구 추가
-@app.route('/hello', methods=['GET'])
-def index():
-    try:
-        message = '안녕하세요 인제대학교 컴퓨터공학과 챗봇서비스 입니다.'
-        json_data = {
-            'message' : message
-        }
-        message = json.dumps(json_data, ensure_ascii=False)
-        message = json.loads(message)
-        print(message)
-        
-        return jsonify(message)
-    except Exception as ex:
-        #오류 발생시 500 error
-        abort(500)
 
 #이미지
 @app.route('/images/<image_file>', methods=['GET'])
+# def image(image_file):
+#     return render_template('img.html', image_file='/resize_images/'+image_file+'_resize.jpg')
 def image(image_file):
-    return render_template('img.html', image_file='/resize_images/'+image_file+'_resize.jpg')
+    return render_template('img.html', image_file='/images/'+image_file+'.jpg')
+
+@app.route('/images2/<image_file>', methods=['GET'])
+def image_png(image_file):
+    return render_template('img.html', image_file='/images/'+image_file+'.png')
 
 
 if __name__ == '__main__':
@@ -101,3 +91,4 @@ if __name__ == '__main__':
 #다시 답변 데이터를 받아오는 함수.
 
 #api를 통해 post 방식으로 /query/NORMAL url를 통해 json 객체의 전달을 주고 받을 수 있음
+

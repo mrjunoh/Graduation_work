@@ -36,13 +36,13 @@ intent = IntentModel(model_name='./intent_model.h5', preprocess= p )
 # print("의도 예측 레이블 : ", predict_label)
 
 
-query = "교육이념 알려줘"
-predict = intent.predict_class(query)
-predict_label = intent.labels[predict]
-print("="*30)
-print(query)
-print("의도 예측 클래스 : ", predict)
-print("의도 예측 레이블 : ", predict_label)
+# query = "교육이념 알려줘"
+# predict = intent.predict_class(query)
+# predict_label = intent.labels[predict]
+# print("="*30)
+# print(query)
+# print("의도 예측 클래스 : ", predict)
+# print("의도 예측 레이블 : ", predict_label)
 
 
 # query = "교수진 소개"
@@ -62,11 +62,11 @@ print("의도 예측 레이블 : ", predict_label)
 # print("의도 예측 클래스 : ", predict)
 # print("의도 예측 레이블 : ", predict_label)
 
-# query = "컴공 사이트 주소 알려줘"
-# predict = intent.predict_class(query)
-# predict_label = intent.labels[predict]
-# print("="*30)
-# print(query)
-# print("의도 예측 클래스 : ", predict)
-# print("의도 예측 레이블 : ", predict_label)
-# print("="*30)
+query = "학사 운영시간 알려줘"
+predict = intent.predict_class(query)
+predict_label = intent.labels[predict]
+print("="*30)
+print(query)
+print("의도 예측 클래스 : ", predict)
+print("의도 예측 레이블 : ", predict_label)
+print("="*30)

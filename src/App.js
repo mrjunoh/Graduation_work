@@ -8,10 +8,6 @@ import Sign_up from './Pages/register';
 import Find_id from './Pages/find_id';
 import Find_pw from './Pages/find_pw';
 import Chatbot from './Pages/chatbot';
-import Chat from './Pages/Chat';
-import Chat2 from './Pages/Chat2.js';
-import Chat3 from './Pages/chat3';
-import Chat4 from './Pages/Chat4'
 import Chat5 from './Pages/Chat5'
 
 function App() {
@@ -25,10 +21,6 @@ function App() {
           <Route exact path="/find_id" element={<Find_id/>}/>
           <Route exact path="/find_pw" element={<Find_pw/>}/>
           <Route exact path="/chatbot" element={<Chatbot/>}/>
-          <Route exact path="/chat" element={<Chat/>}/>
-          <Route exact path="/chat2" element={<Chat2/>}/>
-          <Route exact path="/chat3" element={<Chat3/>}/>
-          <Route exact path="/chat4" element={<Chat4/>}/>
           <Route exact path="/chat5" element={<Chat5/>}/>
         </Routes>
       </div>

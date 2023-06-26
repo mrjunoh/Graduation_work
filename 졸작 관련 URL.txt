@@ -48,7 +48,7 @@ vscode 아나콘다 가상환경
 https://itsjh.tistory.com/40
 
 대학 ai 질의응답 챗봇
-https://seokii.tistory.com/147
+https://seokii.tistory.com/159
 
 코딩애플 chatgpt3 이용해서 api 만들기
 https://www.youtube.com/watch?v=rdWavi2M2HE&ab_channel=%EC%BD%94%EB%94%A9%EC%95%A0%ED%94%8C
@@ -61,3 +61,6 @@ flask 인공지능 연동2
 https://niceman.tistory.com/193
 flask 인공지느 연동1
 https://niceman.tistory.com/192
+
+flask react
+https://velog.io/@flasharrow/Flask-React-%ED%86%B5%EC%8B%A0-%EA%B0%84-%EC%84%A4%EC%A0%95

@@ -9,7 +9,7 @@ save_path = "/chatbot_api/static/resize_images/"
 os.chdir(path)
 print("path is : " + path)
 
-#세이브 경로의 모든 jpb 파일 삭제
+#세이브 경로의 모든 jpg 파일 삭제
 [os.remove(f) for f in glob.glob(save_path + "*.jpg")]
 
 #배열 선언
@@ -37,7 +37,7 @@ print(len(image_list_png))
 print(image_list)
 print(len(image_list))
 
-#png to jpb
+#png to jpg
 cnt2 = 0
 for f in read_files_png:
     img = Image.open(f).convert('RGB')

@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { v1 as uuid } from 'uuid'
+import {v1 as uuid} from 'uuid'
 import axios from 'axios';
 import './css/sty.css';
-import { useNavigate } from 'react-router-dom';
-import Auth from '../hoc/auth';
-import api from '../test/api';
 
-
-const Chat5 = () => {
+const Chat = () => {
   const [myName] = useState('USER');
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [botResponse, setBotResponse] = useState('');
-  const navigate = useNavigate();//react 에서 href역할
+
+  // const fetchMessages = async () => {
+  //   try {
+  //     const res = await axios.get('http://localhost:8000/hello');
+  //     setMessages(prevMessages => [...prevMessages, res.data.message]);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchMessages();
+  // }, []);
 
 
-  const onClickHandler = (evnet) => {
-    axios.get('/api/users/logout')
-      .then(response => {
-        if (response.data.success) {
-          navigate('/login')
-        }
-        else {
-          alert('로그아웃 실패')
-        }
-      })
-  }
 
   const createMessageTag = (LR_className, senderName, message, imageUrl) => {
     return (
@@ -37,7 +34,7 @@ const Chat5 = () => {
           <span>{message}</span>
         </div>
         {
-          imageUrl && imageUrl !== 'nan' && imageUrl !== '없음' && <div>
+          imageUrl && imageUrl !=='nan' && imageUrl !== '없음' && <div>
             <img src={imageUrl} />
           </div>
         }
@@ -58,6 +55,10 @@ const Chat5 = () => {
     receive(data);
   };
 
+  const clearTextarea = () => {
+    document.querySelector('div.input-div textarea').value = '';
+  };
+
   const receive = (data) => {
     const LR = data.senderName !== myName ? 'left' : 'right';
     appendMessageTag(LR, data.senderName, data.message, data.imageUrl);
@@ -72,7 +73,7 @@ const Chat5 = () => {
         { query: inputValue }
       );
       // setMessages(prevMessages => [...prevMessages, res.data.Answer]);
-      appendMessageTag("left", "BOT", res.data.Answer, res.data.imageUrl)
+      appendMessageTag("", "BOT", res.data.Answer, res.data.imageUrl)
       console.log(res);
       setBotResponse(res.data.response);
     } catch (err) {
@@ -91,6 +92,18 @@ const Chat5 = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
+    // try {
+    //   const res = await axios.post(
+    //     'http://localhost:8000/query/NORMAL',
+    //     { query: inputValue }
+    //   );
+    //   setMessages(prevMessages => [...prevMessages, res.data.Answer]);
+    //   setInputValue('');
+    //   console.log(res);
+    //   setBotResponse(res.data.response);
+    // } catch (err) {
+    //   console.error(err);
+    // }
     triggerGhatGpt(inputValue);
   };
 
@@ -100,12 +113,8 @@ const Chat5 = () => {
 
   return (
     <div className="chat_wrap">
-      <div className="header">CHAT
-      <button className='button' onClick={onClickHandler}>
-          Logout
-        </button>
-      </div>
-      <h2 >안녕하세요 인제대학교 컴퓨터공학과 챗봇서비스 입니다. </h2>
+      <div className="header">CHAT</div>
+      <h2>안녕하세요 인제대학교 컴퓨터공학과 챗봇서비스 입니다. </h2>
       <div className="chat">
         <ul>{messages}</ul>
       </div>
@@ -122,9 +131,7 @@ const Chat5 = () => {
   );
 };
 
-
-export default Chat5;
-//export default Auth(Chat5, null);
+export default Chat;
 
 
 

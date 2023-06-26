@@ -117,7 +117,7 @@ function Sign_up(props) {
                     <Grid item xs>
                     </Grid>
                     <Grid item>
-                        <Link>아이디가 있으신가요?</Link>
+                        <Link href="/login">아이디가 있으신가요?</Link>
                     </Grid>
                 </Grid>
             </Box>
